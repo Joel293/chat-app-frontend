@@ -1,0 +1,22 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v; 
+
+.alert {
+    all: unset;
+    width: 100%;
+    text-align: center;
+    
+    padding: 1rem;
+    color: v.$blanco;
+    border-radius: 10px;
+    font-weight: bold;
+
+    &__error {
+        background-color: v.$rojo;
+    }
+
+    &__success {
+        background-color: v.$azul_oscuro;
+    }
+
+}

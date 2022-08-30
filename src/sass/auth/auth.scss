@@ -1,0 +1,91 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.auth {
+    margin: 10rem auto;
+    width: 80%;
+    text-align: center;
+    background-color: v.$blanco;
+    padding: 5rem;
+    border-radius: 10px;
+
+    @include m.telefono { 
+        width: 50%;
+    }
+
+    @include m.tablet {
+        max-width: 40rem;
+    }
+
+    &__heading {
+        font-weight: 800;
+        color: v.$negro_secundario;
+        padding-bottom: 1rem;
+        border-bottom: 1.5px solid v.$gris;
+    }
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+
+    &__field {
+        border-bottom: 2px solid v.$gris;
+        width: 100%;
+        display: flex;
+    }
+
+    &__input {
+        all: unset;
+        text-align: left;
+        padding: .8rem 1rem;
+        color: v.$negro_secundario;
+        width: 100%;
+        
+        &::placeholder {
+            color: darken(v.$gris, 20%);
+        }
+    }
+
+    &__submit {
+        all: unset;
+        width: 100%;
+        text-align: center;
+        background-color: v.$azul_oscuro;
+        padding: 1rem ;
+        color: v.$blanco;
+        border-radius: 10px;
+        font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+            // background-color: darken(v.$, $amount: 0);
+        }
+    }
+
+    &__link {
+        text-align: center;
+        width: 100%;
+
+        & > p {
+            color: v.$negro_secundario;
+            font-size: 1.6rem;
+            line-height: 1.3;
+            
+        }
+
+        & a {
+            color: v.$azul_oscuro;
+            display: block;
+
+            @include m.tablet { 
+                display: inline-block;
+                margin-left: .5rem;
+            }
+        }
+
+    }
+}
